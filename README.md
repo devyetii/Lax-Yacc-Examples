@@ -36,3 +36,6 @@ sudo apt-get install flex bison
     ```
     cc lex.yy.c y.tab.c -o example
     ```
+
+## REFERENCES
+- [lex and yacc primer/HOWTO](https://tldp.org/HOWTO/Lex-YACC-HOWTO-3.html)

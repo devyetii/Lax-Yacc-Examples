@@ -6,40 +6,42 @@
     void yyerror(const char *str);
     int state = 0;
     int temp = 0;
-    int yydebug=0;
+    yydebug=1;
 %}
-%token TOKREAD TOKSET NUMBER BOOL STATEKEY
+%token TOKREAD TOKSET STATEKEY STATEVAL
 
 %%
-commands: /* empty */
-        |
+commands:
+        | commands command
+        ;
+command:
         read_command
         |
         set_command
         ;
-param:  NUMBER
-        |
-        BOOL
-        ;
 read_command:
         TOKREAD STATEKEY
         {
-            if (!strcmp($2, "temprature")) {
-                printf("Heat = %d\n", temp);
+            if (!strcmp($2, "temp")) {
+                printf("reading temp = %d\n", temp);
             } else if (!strcmp($2, "state")) {
-                printf("State = %d\n", state);
+                printf("reading state = %d\n", state);
+            } else {
+                printf("invalid read command: %s\n", $2);
             }
         }
         ;
 set_command:
-        TOKSET STATEKEY param
+        TOKSET STATEKEY STATEVAL
         {
-            if (!strcmp($2, "temprature")) {
+            if (!strcmp($2, "temp")) {
                 temp = atoi($3);
-                printf("temrpature set to %d\n", temp);
+                printf("temp set to %d\n", temp);
             } else if (!strcmp($2, "state")) {
                 state = !strcmp($3, "on");
-                printf("State = %d\n", state);
+                printf("State set to %d\n", state);
+            } else {
+                printf("invalid set command: %s\n", $2);
             }
         }
         ;

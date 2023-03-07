@@ -3,3 +3,4 @@
 !*.y
 !README.md
 !.gitignore
+!input.conf

@@ -48,3 +48,6 @@ sudo apt-get install flex bison
 ## REFERENCES
 - [lex and yacc primer/HOWTO](https://tldp.org/HOWTO/Lex-YACC-HOWTO-3.html)
 - [konieshadow/lex-yacc-examples](https://github.com/konieshadow/lex-yacc-examples) > Has some other useful examples
+- [https://www.geeksforgeeks.org/bottom-up-or-shift-reduce-parsers-set-2/](https://www.geeksforgeeks.org/bottom-up-or-shift-reduce-parsers-set-2/)
+- [https://www.geeksforgeeks.org/lex-program-to-take-input-from-file-and-remove-multiple-spaces-lines-and-tabs/](https://www.geeksforgeeks.org/lex-program-to-take-input-from-file-and-remove-multiple-spaces-lines-and-tabs/)
+- [https://www.geeksforgeeks.org/yacc-program-to-implement-a-calculator-and-recognize-a-valid-arithmetic-expression/](https://www.geeksforgeeks.org/yacc-program-to-implement-a-calculator-and-recognize-a-valid-arithmetic-expression/)
